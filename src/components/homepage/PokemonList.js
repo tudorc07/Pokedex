@@ -1,27 +1,8 @@
-import React from 'react';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
 import PokemanTile from './PokemanTile';
-
-const url = 'https://pokeapi.co/api/v2/pokemon?limit=148';
+import usePokemonData from './../../hooks/use-pokemon-data';
 
 const PokemonList = () => {
-  const [pokemon, setPokemon] = useState([]);
-
-  useEffect(() => {
-    const getPokemon = async () => {
-      try {
-        const response = await axios.get(url);
-        const { results } = response.data;
-
-        setPokemon(results);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getPokemon();
-  }, []);
-
+  const { pokemon } = usePokemonData();
   return (
     <main className="min-h-screen bg-red ">
       <div className="container mx-auto">
