@@ -1,12 +1,16 @@
-import PokemonList from './components/PokemonList';
-import Header from './components/Header';
-import ScrollToTop from './components/ScrollToTop';
+import Homepage from './pages/homepage';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import ErrorPage from './pages/error-page';
+
 const App = () => {
   return (
     <div className="App">
-      <Header />
-      <PokemonList />
-      <ScrollToTop />
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Homepage} />
+          <Route path="*" component={ErrorPage} />
+        </Switch>
+      </Router>
     </div>
   );
 };

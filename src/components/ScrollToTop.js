@@ -21,7 +21,7 @@ const ScrollToTop = () => {
       <Link
         smooth={true}
         to="header"
-        className="fixed bottom-4 right-4 md:right-24 bg-black text-whiteSecondary w-10 md:w-40 p-2 rounded-xl flex justify-center items-center capitalize cursor-pointer"
+        className="fixed bottom-4 right-4 md:right-24 bg-black text-whiteSecondary w-14 h-14 md:w-40 p-2 rounded-xl flex justify-center items-center capitalize cursor-pointer"
       >
         Top
       </Link>

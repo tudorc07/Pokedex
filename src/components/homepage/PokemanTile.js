@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const PokemanTile = ({ name, url, index }) => {
+const PokemanTile = ({ name, url, id }) => {
   const [abilities, setAbilities] = useState([]);
   const [imgSrc, setImgSrc] = useState('');
 
@@ -27,9 +27,9 @@ const PokemanTile = ({ name, url, index }) => {
   }, [url]);
 
   return (
-    <li className="flex flex-col items-center bg-whiteSecondary mr-4 mb-4 mt-4 rounded-2xl relative font-architect">
+    <li className="flex flex-col items-center bg-whiteSecondary mr-4 mb-4 mt-4 rounded-2xl relative font-architect p-2">
       <span className="absolute left-1 top-2 block bg-red text-whiteSecondary p-2 rounded-xl">
-        No:{index + 1}
+        No:{id}
       </span>
 
       <h1 className="capitalize">{name}</h1>

@@ -31,7 +31,7 @@ const PokemonList = () => {
           id="pokemon-list"
         >
           {pokemon.map(({ name, url }, index) => (
-            <PokemanTile key={index} index={index} name={name} url={url} />
+            <PokemanTile key={index} id={index + 1} name={name} url={url} />
           ))}
         </ul>
       </div>
