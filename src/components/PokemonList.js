@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import Pokeman from './Pokeman';
+import PokemanTile from './PokemanTile';
 
 const PokemonList = () => {
   const [pokemon, setPokemon] = useState([]);
@@ -31,7 +31,7 @@ const PokemonList = () => {
           id="pokemon-list"
         >
           {pokemon.map(({ name, url }, index) => (
-            <Pokeman key={index} index={index} name={name} url={url} />
+            <PokemanTile key={index} index={index} name={name} url={url} />
           ))}
         </ul>
       </div>

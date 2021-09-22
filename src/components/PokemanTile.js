@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-const Pokeman = ({ name, url, index }) => {
+
+const PokemanTile = ({ name, url, index }) => {
   const [abilities, setAbilities] = useState([]);
   const [imgSrc, setImgSrc] = useState('');
 
@@ -53,4 +54,4 @@ const Pokeman = ({ name, url, index }) => {
   );
 };
 
-export default Pokeman;
+export default PokemanTile;
