@@ -3,15 +3,15 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import PokemanTile from './PokemanTile';
 
+const url = 'https://pokeapi.co/api/v2/pokemon?limit=148';
+
 const PokemonList = () => {
   const [pokemon, setPokemon] = useState([]);
 
   useEffect(() => {
     const getPokemon = async () => {
       try {
-        const response = await axios.get(
-          'https://pokeapi.co/api/v2/pokemon?limit=148'
-        );
+        const response = await axios.get(url);
         const { results } = response.data;
 
         setPokemon(results);

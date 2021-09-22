@@ -1,28 +1,26 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const PokemanTile = ({ name, url, id }) => {
-  const [abilities, setAbilities] = useState([]);
   const [imgSrc, setImgSrc] = useState('');
 
   useEffect(() => {
-    const getPokemanAbilities = async () => {
+    const getPokemanImages = async () => {
       try {
         const response = await axios.get(url);
-        const { abilities, sprites } = response.data;
+        const { sprites } = response.data;
         const { other } = sprites;
         const { dream_world } = other;
         const { front_default: imgSrc } = dream_world;
 
         setImgSrc(imgSrc);
-
-        setAbilities(abilities);
       } catch (error) {
         console.log(error);
       }
     };
 
-    getPokemanAbilities();
+    getPokemanImages();
   }, [url]);
 
   return (
@@ -34,21 +32,13 @@ const PokemanTile = ({ name, url, id }) => {
       <h1 className="capitalize">{name}</h1>
 
       <img src={imgSrc} alt={name} className=" w-52 h-52 mt-6" />
-      <ul>
-        <h1 className="text-center capitalize">Abilities</h1>
-        {abilities.map(({ ability }, index) => {
-          const { name: abilityName } = ability;
 
-          return (
-            <li
-              className="bg-red my-2 text-center p-1 rounded-xl capitalize"
-              key={index}
-            >
-              {abilityName}
-            </li>
-          );
-        })}
-      </ul>
+      <Link
+        to={`/pokemon/${id}`}
+        className="bg-red p-1 rounded-md mt-3 text-whiteSecondary"
+      >
+        More info
+      </Link>
     </li>
   );
 };
