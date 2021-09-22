@@ -13,7 +13,6 @@ const PokemonList = () => {
           'https://pokeapi.co/api/v2/pokemon?limit=148'
         );
         const { results } = response.data;
-        console.log(results);
 
         setPokemon(results);
       } catch (error) {

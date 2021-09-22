@@ -10,7 +10,6 @@ const PokemanTile = ({ name, url, id }) => {
       try {
         const response = await axios.get(url);
         const { abilities, sprites } = response.data;
-        console.log(abilities);
         const { other } = sprites;
         const { dream_world } = other;
         const { front_default: imgSrc } = dream_world;
