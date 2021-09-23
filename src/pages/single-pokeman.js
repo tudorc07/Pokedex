@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -7,6 +8,10 @@ import usePokemanData from '../hooks/use-pokeman-data';
 const SinglePokeman = () => {
   const { id } = useParams();
   const { name, height, imgSrc, types, abilities, moves } = usePokemanData(id);
+
+  useEffect(() => {
+    document.title = name;
+  }, [name]);
 
   return (
     <div className="min-h-screen bg-red flex justify-center items-center font-architect">
