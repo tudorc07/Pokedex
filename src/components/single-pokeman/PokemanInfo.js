@@ -16,7 +16,7 @@ const PokemanInfo = ({ name, height, types, abilities, moves }) => {
       </p>
 
       <p className="mt-4">
-        Types:{' '}
+        Type:{' '}
         {types.map(({ type }, index) => {
           return (
             <span
