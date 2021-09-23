@@ -6,6 +6,7 @@ const Homepage = () => {
   useEffect(() => {
     document.title = 'Pokedex';
   }, []);
+
   return (
     <div className="homepage">
       <Header />
