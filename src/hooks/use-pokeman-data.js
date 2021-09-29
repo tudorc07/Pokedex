@@ -10,6 +10,7 @@ const usePokemanData = (id) => {
   const [types, setTypes] = useState([]);
   const [abilities, setAbilities] = useState([]);
   const [moves, setMoves] = useState([]);
+
   useEffect(() => {
     const getPokemonData = async () => {
       try {
