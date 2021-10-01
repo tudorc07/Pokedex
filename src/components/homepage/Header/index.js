@@ -9,7 +9,7 @@ const Header = () => {
   const typicalText = [
     'Welcome to Pokedex!',
     1000,
-    `Let' checkout some Pokemon!`,
+    `Let's checkout some Pokemon!`,
     1000,
   ];
 
