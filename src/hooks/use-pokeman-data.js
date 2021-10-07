@@ -22,6 +22,7 @@ const usePokemanData = (id) => {
   const pokemanFromList = singlePokemanList.find(
     (pokeman) => pokeman.id === id
   );
+
   useEffect(() => {
     const getPokemonData = async () => {
       try {
