@@ -3,14 +3,17 @@ import { useEffect, useState } from 'react';
 
 const url = 'https://pokeapi.co/api/v2/pokemon/';
 
-const usePokemanData = (id) => {
-  const [name, setName] = useState('');
-  const [height, setHeight] = useState('');
-  const [imgSrc, setImgSrc] = useState('');
-  const [types, setTypes] = useState([]);
-  const [abilities, setAbilities] = useState([]);
-  const [moves, setMoves] = useState([]);
+const pokemonInitialState = {
+  name: '',
+  height: 0,
+  types: [],
+  imgSrc: null,
+  abilities: [],
+  moves: [],
+};
 
+const usePokemanData = (id) => {
+  const [pokeman, setPokeman] = useState(pokemonInitialState);
   useEffect(() => {
     const getPokemonData = async () => {
       try {
@@ -24,12 +27,14 @@ const usePokemanData = (id) => {
         const specialMoves = moves.slice(0, 2);
         const slicedAbilities = abilities.slice(0, 2);
 
-        setName(name);
-        setHeight(height);
-        setImgSrc(imgSrc);
-        setTypes(types);
-        setAbilities(slicedAbilities);
-        setMoves(specialMoves);
+        setPokeman({
+          name: name,
+          height: height,
+          imgSrc: imgSrc,
+          types: types,
+          abilities: slicedAbilities,
+          moves: specialMoves,
+        });
       } catch (error) {
         console.log(error);
       }
@@ -37,7 +42,7 @@ const usePokemanData = (id) => {
 
     getPokemonData();
   }, [id]);
-  return { name, height, imgSrc, types, abilities, moves };
+  return pokeman;
 };
 
 export default usePokemanData;
