@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import ErrorPage from './pages/error-page';
 import { Suspense, lazy } from 'react';
 import Loading from './pages/loading-page';
 import { Provider } from 'react-redux';
@@ -10,7 +9,7 @@ const SinglePokeman = lazy(() => import('./pages/single-pokeman'));
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="App" style={{ fontFamily: 'Architects Daughter' }}>
       <Router>
         <Suspense fallback={<Loading />}>
           <Switch>
@@ -18,7 +17,6 @@ const App = () => {
               <Route exact path="/" component={Homepage} />
               <Route path="/pokemon/:id" component={SinglePokeman} />
             </Provider>
-            <Route path="*" component={ErrorPage} />
           </Switch>
         </Suspense>
       </Router>

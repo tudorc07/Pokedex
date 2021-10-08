@@ -1,5 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
+import { scrollToTopStyles } from './scrollToTopStyles';
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from '@emotion/react';
 
 const ScrollToTop = () => {
   const [isButtonVisible, setIsButtonVisible] = useState(false);
@@ -18,11 +22,7 @@ const ScrollToTop = () => {
 
   return (
     isButtonVisible && (
-      <Link
-        smooth={true}
-        to="header"
-        className="fixed bottom-4 right-4 md:right-24 bg-black text-whiteSecondary w-14 h-14 md:w-40 p-2 rounded-xl flex justify-center items-center capitalize cursor-pointer"
-      >
+      <Link smooth={true} to="header" css={scrollToTopStyles}>
         Top
       </Link>
     )

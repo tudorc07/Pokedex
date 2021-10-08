@@ -1,6 +1,8 @@
+import { Container } from './styles';
+
 const PokemanInfo = ({ name, height, types, abilities, moves }) => {
   return (
-    <>
+    <Container>
       <p>
         Name:{' '}
         <span className="capitalize ml-2 text-whiteSecondary bg-red rounded-md p-0.5">
@@ -44,8 +46,7 @@ const PokemanInfo = ({ name, height, types, abilities, moves }) => {
       </p>
 
       <p className="mt-2">
-        <span>Special moves: </span>
-
+        Special moves:
         {moves.map(({ move }, index) => {
           return (
             <span
@@ -57,7 +58,7 @@ const PokemanInfo = ({ name, height, types, abilities, moves }) => {
           );
         })}
       </p>
-    </>
+    </Container>
   );
 };
 
