@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { addPokemanToList } from '../store/slices/single-pokeman-list-slice.js';
@@ -19,8 +19,9 @@ const usePokemanData = (id) => {
   const [pokeman, setPokeman] = useState(pokemonInitialState);
   const singlePokemanList = useSelector((state) => state.singlePokemanList);
   const dispatch = useDispatch();
-  const pokemanFromList = singlePokemanList.find(
-    (pokeman) => pokeman.id === id
+  const pokemanFromList = useMemo(
+    () => singlePokemanList.find((pokeman) => pokeman.id === id),
+    [singlePokemanList, id]
   );
 
   useEffect(() => {

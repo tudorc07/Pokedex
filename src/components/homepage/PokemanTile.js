@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const PokemanTile = ({ name, url, id }) => {
+const PokemanTile = ({ name, id }) => {
   const imgSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`;
   return (
     <li className="flex flex-col items-center bg-whiteSecondary mr-4 mb-4 mt-4 rounded-2xl relative font-architect p-2">
