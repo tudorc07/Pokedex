@@ -36,7 +36,7 @@ const usePokemanData = (id) => {
         const { front_default: imgSrc } = dream_world;
         const specialMoves = moves.slice(0, 2);
         const slicedAbilities = abilities.slice(0, 2);
-        console.log('fetchh2');
+
         const newPokeman = {
           id: id,
           name: name,

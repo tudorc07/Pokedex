@@ -16,7 +16,6 @@ const usePokemonData = () => {
         const response = await axios.get(url);
         const { results } = response.data;
         dispatch(populatePokemonArray(results));
-        console.log('fetch');
       } catch (error) {
         console.log(error);
       }
